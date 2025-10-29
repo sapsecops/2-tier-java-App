@@ -2,12 +2,12 @@
 ## Clone the Repo
 ```
 cd /home/ec2-user/
-sudo git clone https://github.com/digistackops-java-org/JAVA-2-tier-UMS-Local.git
+sudo git clone https://github.com/sapsecops/2-tier-java-App.git
 ```
 ## Switch to Local-Setup Branch
 ```
-cd /home/ec2-user/JAVA-2-tier-UMS-Local
-sudo git checkout 03-Docker-Setup
+cd /home/ec2-user/2-tier-java-App
+sudo git checkout 02-Docker-Setup
 ```
 # Create network for our 2-Tier UMS Application
 ```
@@ -17,7 +17,7 @@ docker network create ums-net
 # Build Image for  postgressql  DB
 
 ```
-cd /home/ec2-user/JAVA-2-tier-UMS-Local/postgres
+cd /home/ec2-user/2-tier-java-App/postgres
 docker build -t sapsecops/2-tier-java:postgresv1 .
 ```
 
@@ -42,7 +42,7 @@ docker exec -it ums-db psql -U dbadmin -d employeedb -c "select * from employee;
 ### Before that we need to Edit your DB credentials in application.properties file
 
 ```
-cd /home/ec2-user/JAVA-2-tier-UMS-Local/java
+cd /home/ec2-user/2-tier-java-App/java
 sudo vim src/main/resources/application.properties
 ```
 ```
@@ -57,8 +57,8 @@ If you get permission Issue
 
 ### Give the permissions
 ```
-sudo chown -R ec2-user:ec2-user /home/ec2-user/JAVA-2-tier-UMS-Local
-chmod u+w /home/ec2-user/JAVA-2-tier-UMS-Local
+sudo chown -R ec2-user:ec2-user /home/ec2-user/2-tier-java-App
+chmod u+w /home/ec2-user/2-tier-java-App
 ```
 ## Build the Artifact
 ```
