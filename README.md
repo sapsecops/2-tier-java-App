@@ -105,12 +105,12 @@ sudo yum install git -y
 
 ```
 cd /home/ec2-user/
-sudo git clone https://github.com/digistackops-java-org/JAVA-2-tier-UMS-Local.git
+sudo git clone https://github.com/sapsecops/2-tier-java-App.git
 ```
 ### Switch to Local-Setup Branch
 ```
 cd /home/ec2-user/JAVA-2-tier-UMS-Local
-sudo git checkout 02-Local-setup-Prod
+sudo git checkout 01-Local-setup-Prod
 ```
 ## Setup your Application Database by executing "initdb.sql" script from Application-server
 
