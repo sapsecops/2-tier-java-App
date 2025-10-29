@@ -114,7 +114,7 @@ sudo git checkout 01-Local-setup-Prod
 ```
 ## Setup your Application Database by executing "initdb.sql" script from Application-server
 
-Step:1 ==> install "MYSQL-Client" for communicate with MYSQL Database
+Step:1 ==> install "postgressql-Client" for communicate with MYSQL Database
 ```
 sudo dnf update -y
 sudo dnf install -y postgresql16
