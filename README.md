@@ -139,8 +139,8 @@ spring.datasource.driver-class-name=org.postgresql.Driver
 If you get permission Issue
 
 ```
-sudo chown -R ec2-user:ec2-user /home/ec2-user/JAVA-2-tier-UMS-Local
-chmod u+w /home/ec2-user/JAVA-2-tier-UMS-Local
+sudo chown -R ec2-user:ec2-user /home/ec2-user/2-tier-java-App
+chmod u+w /home/ec2-user/2-tier-java-App
 ```
 
 ### Build the Artifact
