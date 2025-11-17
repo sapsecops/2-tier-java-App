@@ -58,7 +58,7 @@ sudo chmod +x "${PROFILE_FILE}"
 
 echo
 echo "-> Reloading profile"
-source "${PROFILE_FILE}"
+source ${PROFILE_FILE}
 
 echo
 echo "=== Validating Installations ==="
