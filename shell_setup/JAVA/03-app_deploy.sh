@@ -19,12 +19,12 @@ DB_HOST="${DB_HOST:-172.31.16.207}"
 DB_PORT="${DB_PORT:-5432}"
 DB_ADMIN_USER="${DB_ADMIN_USER:-dbadmin}"
 DB_ADMIN_PW="${DB_ADMIN_PW:-Admin@123}"
-DB_NAME="${DB_NAME:-postgres}"
+DB_NAME="${DB_NAME:-employeedb}"
 initdb="${initdb:-postgres}"
 # application.properties DB values to write
 APP_DB_URL="${APP_DB_URL:-jdbc:postgresql://${DB_HOST}:${DB_PORT}/${DB_NAME}}"
-APP_DB_USER="${APP_DB_USER:-dbadmin}"
-APP_DB_PASSWORD="${APP_DB_PASSWORD:-Admin@123}"
+APP_DB_USER="${APP_DB_USER:-appuser}"
+APP_DB_PASSWORD="${APP_DB_PASSWORD:-P@55Word}"
 
 # Paths
 APP_BASE="${CLONE_PARENT}/${REPO_DIR_NAME}"
