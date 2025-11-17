@@ -202,6 +202,20 @@ sudo find "${TOMCAT_INSTALL_DIR}" -type f -exec sudo chmod 644 {} \;
 # Keep scripts executable
 sudo chmod +x "${TOMCAT_INSTALL_DIR}/bin/"*.sh || true
 
+# 8) reload systemd and enable/start service
+echo "-> Reloading systemd daemon"
+sudo systemctl daemon-reload
+
+echo "-> Enabling tomcat service"
+sudo systemctl enable tomcat || true
+
+echo "-> Starting tomcat service (or restarting if already running)"
+if systemctl is-active --quiet tomcat; then
+  sudo systemctl restart tomcat
+else
+  sudo systemctl start tomcat
+fi
+
 # 12) show service status
 echo
 echo "=== Tomcat service status ==="
