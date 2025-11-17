@@ -20,7 +20,7 @@ DB_PORT="${DB_PORT:-5432}"
 DB_ADMIN_USER="${DB_ADMIN_USER:-dbadmin}"
 DB_ADMIN_PW="${DB_ADMIN_PW:-Admin@123}"
 DB_NAME="${DB_NAME:-postgres}"
-
+initdb="${initdb:-postgres}"
 # application.properties DB values to write
 APP_DB_URL="${APP_DB_URL:-jdbc:postgresql://${DB_HOST}:${DB_PORT}/${DB_NAME}}"
 APP_DB_USER="${APP_DB_USER:-dbadmin}"
@@ -101,7 +101,7 @@ fi
 INITDB_FULL="${APP_BASE}/${INITDB_REL}"
 if [[ -f "${INITDB_FULL}" ]]; then
   log "Found init SQL at ${INITDB_FULL}. Executing on ${DB_HOST}:${DB_PORT} as ${DB_ADMIN_USER}"
-  PGPASSWORD="${DB_ADMIN_PW}" psql -h "${DB_HOST}" -p "${DB_PORT}" -U "${DB_ADMIN_USER}" -d "${DB_NAME}" -f "${INITDB_FULL}"
+  PGPASSWORD="${DB_ADMIN_PW}" psql -h "${DB_HOST}" -p "${DB_PORT}" -U "${DB_ADMIN_USER}" -d "${initdb}" -f "${INITDB_FULL}"
   log "initdb.sql executed."
 else
   log "No initdb.sql found at ${INITDB_FULL}. Skipping DB initialization."
