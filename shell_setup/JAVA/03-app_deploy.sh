@@ -37,6 +37,8 @@ DEPLOY_WAR_NAME="${DEPLOY_WAR_NAME:-SSO.war}"
 MVN_CMD="${MVN_CMD:-mvn}"
 
 # ---------- END CONFIG ----------
+sudo chown -R ec2-user:ec2-user ${APP_BASE}
+sudo chmod -R u+w ${APP_BASE}
 
 log(){ echo "==> $*"; }
 err(){ echo "ERROR: $*" >&2; exit 1; }
@@ -109,7 +111,7 @@ fi
 APP_PROPERTIES="${APP_BASE}/${APP_PROPERTIES_REL}"
 if [[ -f "${APP_PROPERTIES}" ]]; then
   log "Backing up and updating ${APP_PROPERTIES} with DB connection values"
-  cp -a "${APP_PROPERTIES}" "${APP_PROPERTIES}.bak.$(date +%s)"
+  sudo cp -a "${APP_PROPERTIES}" "${APP_PROPERTIES}.bak.$(date +%s)"
   sudo -u ec2-user bash -c "awk \
     -v url='spring.datasource.url=${APP_DB_URL}' \
     -v user='spring.datasource.username=${APP_DB_USER}' \
