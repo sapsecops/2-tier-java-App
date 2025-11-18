@@ -10,7 +10,7 @@ IFS=$'\n\t'
 
 # --- User-editable variables ---
 PG_VERSION=16
-POSTGRES_PW="${POSTGRES_PW:-NewStrongPasswordHere}"   # change or export before running
+POSTGRES_PW="${POSTGRES_PW:-VenkY@007}"   # change or export before running
 DBADMIN_NAME="${DBADMIN_NAME:-dbadmin}"
 DBADMIN_PW="${DBADMIN_PW:-Admin@123}"                 # change or export before running
 

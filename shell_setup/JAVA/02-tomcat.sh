@@ -15,9 +15,9 @@ TOMCAT_GROUP="${TOMCAT_GROUP:-tomcat}"
 TOMCAT_USER="${TOMCAT_USER:-tomcat}"
 TOMCAT_INSTALL_DIR="${TOMCAT_INSTALL_DIR:-/opt/tomcat}"
 TOMCAT_TMP_DIR="${TOMCAT_TMP_DIR:-/tmp}"
-TOMCAT_VERSION="${TOMCAT_VERSION:-9.0.112}"
+TOMCAT_VERSION="${TOMCAT_VERSION:-10.1.49}"
 TOMCAT_ARCHIVE="apache-tomcat-${TOMCAT_VERSION}.tar.gz"
-TOMCAT_DOWNLOAD_URL="${TOMCAT_DOWNLOAD_URL:-https://dlcdn.apache.org/tomcat/tomcat-9/v${TOMCAT_VERSION}/bin/${TOMCAT_ARCHIVE}}"
+TOMCAT_DOWNLOAD_URL="${TOMCAT_DOWNLOAD_URL:-https://dlcdn.apache.org/tomcat/tomcat-10/v${TOMCAT_VERSION}/bin/${TOMCAT_ARCHIVE}}"
 SYSTEMD_UNIT="/etc/systemd/system/tomcat.service"
 
 # Tomcat manager credentials (change before production!)
